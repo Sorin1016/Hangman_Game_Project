@@ -1,14 +1,7 @@
-import java.sql.Array;
 import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
-        // 1. Afiseaza la consola "Welcome to hangman"
-        // 2. Afiseaza cuvantul este: "*****"
-        // 3. Cere o litera de la user
-        // 4. citeste o litera de la consola si salveaza intr-o variabila
-        // 5. Parcurgem cuvantul si comparam fiecare litera din cuvant cu litera salvata
-        // 6. Daca exista litera inlocuim litera de la pozitia literei din cuvant in sirul de stelute
         Scanner sc = new Scanner(System.in);
         Random rnd = new Random();
         ArrayList<String[]> pictures =
@@ -84,9 +77,6 @@ public class Main {
         String hiddenWord = words.get(index);
         ArrayList<Character> usedLetters = new ArrayList<>();
         char[] stars = new char[hiddenWord.length()];
-//        for (int i = 0; i < stars.length; i++) {
-//            stars[i] = '*';
-//        }
         Arrays.fill(stars, '*');
         System.out.println(String.valueOf(stars));
 
@@ -117,7 +107,7 @@ public class Main {
                 pictures.remove(0);
             }
 
-            if (attempts == 0 || pictures.isEmpty()) {
+            if (pictures.isEmpty()) {
                 System.out.println("Game over ! Try again !");
                 break;
             }
